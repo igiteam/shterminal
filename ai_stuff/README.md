@@ -6,7 +6,7 @@ Alright mate, let's walk through exactly what happens when you rent that 8× H20
 🚀 THE 8× H200 EXPERIENCE: STEP BY STEP
 Hour 0: You Rent the Instance
 Vast.ai: "Here's your 8× H200 server - IP: 194.xx.xx.xx"
-You: ssh root@194.xx.xx.xx
+You: ssh [root@194.xx.xx.xx](mailto:root@194.xx.xx.xx)
 You're in: ~3 seconds later
 
 Hour 0-1: Script Execution
@@ -45,7 +45,7 @@ If you choose to download DeepSeek:
 🎯 WHAT YOU CAN TEST INSTANTLY (Without downloading 685GB)
 
 1. Multi-GPU Detection
-   nvidia-smi
+nvidia-smi
 
 You'll see all 8 H200s, each with 141GB VRAM, total 1.128TB! 2. GPU-to-GPU Bandwidth
 nvidia-smi topo -m
@@ -60,7 +60,7 @@ print(f"Total VRAM: {sum(torch.cuda.get_device_properties(i).total_memory for i 
 # Output: 1.13 TB 🚀
 
 4. API Response Time
-   curl http://localhost:3000/health
+curl [http://localhost:3000/health](http://localhost:3000/health)
 
 Returns within milliseconds - shows all 8 GPU stats 5. Your 378K-line File Test
 
@@ -121,9 +121,7 @@ You'll see:
 
 8 GPUs. 1.128TB VRAM. All yours for $25/hr. 😱
 Moment 2: First API Call Using All 8 GPUs
-curl -X POST http://localhost:3000/v1/completions \
- -H "Content-Type: application/json" \
- -d '{
+curl -X POST [http://localhost:3000/v1/completions](http://localhost:3000/v1/completions)  -H "Content-Type: application/json"  -d '{
 "model": "deepseek-v3-8xh200",
 "prompt": "Write a 1000-word essay on quantum computing",
 "max_tokens": 2000
@@ -150,7 +148,7 @@ Moment 5: Running 10 Parallel App Generations
 # Launch 10 instances of your app generator in parallel
 
 for i in {1..10}; do
-python3 generate*app.py --template template*$i.json &
+python3 generate_app.py --template template_$i.json &
 done
 wait
 
@@ -258,13 +256,13 @@ nvidia-smi
 
 # Test the API
 
-curl http://localhost:3000/health
+curl [http://localhost:3000/health](http://localhost:3000/health)
 
 # Should show all 8 GPUs with 0% usage
 
 # Check your web terminal
 
-curl http://localhost:3001/api/status
+curl [http://localhost:3001/api/status](http://localhost:3001/api/status)
 
 Step 2: Test Your 378K-line Masterpiece
 bash
@@ -313,7 +311,7 @@ time ./generate_app.sh --template simple
 
 echo "Test 2: 10 parallel apps"
 time for i in {1..10}; do
-./generate*app.sh --template template*$i.json &
+./generate_app.sh --template template_$i.json &
 done
 wait
 
@@ -341,7 +339,7 @@ bash
 
 # Deploy to platforms
 
-for app in ./generated_apps/\*; do
+for app in ./generated_apps/*; do
 ./deploy_to_platforms.sh $app --all
 done
 
@@ -391,7 +389,7 @@ bash
 
 # Create a results directory
 
-mkdir -p /results/8xh200*benchmark*$(date +%Y%m%d)
+mkdir -p /results/8xh200_benchmark_$(date +%Y%m%d)
 
 # Save all metrics
 
@@ -420,23 +418,23 @@ You Now Have:
 The Critical Questions Answered:
 Question Answer from Testing
 Does AppGenesys scale to 8× H200? ✅ Yes / ❌ No
-What's the real speedup? **_×
+What's the real speedup? ___×
 Can you generate 10 apps simultaneously? ✅ Yes / ❌ No
 Is $375K/month realistic? ✅ Yes / ❌ No
-What breaks at scale? _** issues found
-How much does it cost to run? $**_ per 24h
-ROI on Supermicro? _** months
+What breaks at scale? ___ issues found
+How much does it cost to run? $___ per 24h
+ROI on Supermicro? ___ months
 🏆 THE MOMENT OF TRUTH
 Scenario A: IT WORKS PERFECTLY 🎉
 bash
 
 # Results:
 
-- 100 apps generated in 4 hours
-- Deployed to 19 platforms automatically
-- Revenue pipeline: $375K/month confirmed
-- Speedup: 500× on some tasks
-- No major issues found
+* 100 apps generated in 4 hours
+* Deployed to 19 platforms automatically
+* Revenue pipeline: $375K/month confirmed
+* Speedup: 500× on some tasks
+* No major issues found
 
 # Next step:
 
@@ -447,9 +445,9 @@ bash
 
 # Results:
 
-- Works but slower than expected
-- Some bottlenecks identified
-- Revenue potential: $200K/month
+* Works but slower than expected
+* Some bottlenecks identified
+* Revenue potential: $200K/month
 
 # Next step:
 
@@ -460,9 +458,9 @@ bash
 
 # Results:
 
-- Crashes under load
-- GPUs not fully utilized
-- Revenue not materializing
+* Crashes under load
+* GPUs not fully utilized
+* Revenue not materializing
 
 # Next step:
 
@@ -487,10 +485,10 @@ Subject: "8× H200 Test Complete - Ready to Purchase"
 
 # 2. Attach your results
 
-- benchmark_results.txt
-- revenue_projections.json
-- gpu_stats.csv
-- Screenshots of web terminal
+* benchmark_results.txt
+* revenue_projections.json
+* gpu_stats.csv
+* Screenshots of web terminal
 
 # 3. Schedule the call with Erik and Josh
 
@@ -575,7 +573,7 @@ text
 Template Library (30MB+ each):
 ├── iOS app template
 ├── Android app template
-├── Web app template  
+├── Web app template
 ├── Desktop app template
 ├── TV app template (Samsung, LG, Roku, FireTV)
 ├── Console templates (PS, Xbox, Nintendo)
@@ -587,7 +585,7 @@ bash
 # On MacBook (current):
 
 1 template → 30 minutes → 1 app
-Next template → 30 minutes → 1 app  
+Next template → 30 minutes → 1 app
 Next template → 30 minutes → 1 app
 Total: 3 apps/day max (if you work nonstop)
 
@@ -604,7 +602,7 @@ text
 
 Generated Apps:
 ├── Photo Editor (iOS) - ready for App Store
-├── Photo Editor (Android) - ready for Play Store  
+├── Photo Editor (Android) - ready for Play Store
 ├── Photo Editor (Web) - ready for hosting
 ├── Photo Editor (Windows) - ready for Microsoft Store
 ├── Photo Editor (macOS) - ready for App Store
@@ -643,7 +641,7 @@ bash
 
 # Load your 10 best templates
 
-./load*templates.sh template*{1..10}.json
+./load_templates.sh template_{1..10}.json
 
 # Fire up the 8× H200
 
@@ -678,7 +676,7 @@ bash
 
 # Different templates, different apps
 
-./load*templates.sh template*{11..20}.json
+./load_templates.sh template_{11..20}.json
 ./generate_all.sh
 
 # Another 10 apps, another $12,500
@@ -758,7 +756,7 @@ bash
 
 # Run tests for ALL 10 apps simultaneously
 
-for app in ./apps/\*; do
+for app in ./apps/*; do
 cd $app
 ./run_tests.sh & # Run in background
 done
@@ -783,17 +781,17 @@ bash
 
 # This tests:
 
-- iOS App Store submission
-- Google Play Store submission
-- Microsoft Store submission
-- Samsung TV Store
-- LG TV Store
-- Roku Channel
-- FireTV
-- Xbox Store
-- PlayStation Store
-- Nintendo Store
-- ...and 9 more!
+* iOS App Store submission
+* Google Play Store submission
+* Microsoft Store submission
+* Samsung TV Store
+* LG TV Store
+* Roku Channel
+* FireTV
+* Xbox Store
+* PlayStation Store
+* Nintendo Store
+* ...and 9 more!
 
 # All 19 platforms tested in parallel
 
@@ -808,10 +806,10 @@ bash
 
 # Monitor in real-time:
 
-- Crash reports
-- Error logs
-- User engagement
-- Revenue metrics
+* Crash reports
+* Error logs
+* User engagement
+* Revenue metrics
 
 # If all good after 1 hour → roll out to 100%
 
@@ -824,7 +822,7 @@ bash
 
 # Load ALL 10 apps into GPU memory at once
 
-./ai_test_suite.py --apps ./apps/\*
+./ai_test_suite.py --apps ./apps/*
 
 # AI analyzes:
 
@@ -932,10 +930,10 @@ text
 
 What you're trying to reverse-engineer:
 
-- Apple's private Bluetooth stack
-- IOBluetooth framework internals
-- Big Sur's Bluetooth security changes
-- Wii Remote proprietary protocol
+* Apple's private Bluetooth stack
+* IOBluetooth framework internals
+* Big Sur's Bluetooth security changes
+* Wii Remote proprietary protocol
 
 Time needed: Weeks or months
 Success probability: Low
@@ -946,27 +944,27 @@ bash
 # On MacBook:
 
 1. You: "Let me try another PIN format"
-   Wait 2 minutes to recompile
-   Test → Fail → Repeat 50 times
-   Total: 8 hours
+Wait 2 minutes to recompile
+Test → Fail → Repeat 50 times
+Total: 8 hours
 
 # On 8× H200 with AI:
 
 1. AI loads:
 
-   - Original GitHub project
-   - All 50 of your compilation attempts
-   - Your console logs
-   - Apple's Bluetooth docs
-   - 1000s of forum posts about Wiimote pairing
+   * Original GitHub project
+   * All 50 of your compilation attempts
+   * Your console logs
+   * Apple's Bluetooth docs
+   * 1000s of forum posts about Wiimote pairing
 
 2. AI analyzes in 30 seconds:
-   "I see the pattern. On Big Sur, the PIN needs to be sent as ASCII, not raw bytes.
-   Also, there's a timing issue - you need a 100ms delay after setUserDefinedPincode.
-   Here's the exact fix for line 347 in ViewController.m"
+"I see the pattern. On Big Sur, the PIN needs to be sent as ASCII, not raw bytes.
+Also, there's a timing issue - you need a 100ms delay after setUserDefinedPincode.
+Here's the exact fix for line 347 in ViewController.m"
 
 3. You apply fix → Test → Works
-   Total: 5 minutes
+Total: 5 minutes
 
 🎯 THE REAL BOTTLENECK
 Problem Current Solution 8× H200 Solution
@@ -995,9 +993,9 @@ bash
 
 1. You: "Here's the error log"
 2. 8× H200: "I've analyzed 1,234 similar Bluetooth pairing issues.
-   The problem is that IOBluetoothDevicePair on Big Sur requires
-   the PIN to be sent as NSString, not raw bytes.
-   Here's the fix:"
+The problem is that IOBluetoothDevicePair on Big Sur requires
+the PIN to be sent as NSString, not raw bytes.
+Here's the fix:"
 3. You: Apply fix → Works
 
 Time: 5 minutes
@@ -1032,7 +1030,7 @@ Second 1: 10 Parallel Analyses
 text
 
 GPU 1: Testing PIN format "raw bytes" → ❌ error 31
-GPU 2: Testing PIN format "ASCII decimal" → ❌ error 31  
+GPU 2: Testing PIN format "ASCII decimal" → ❌ error 31
 GPU 3: Testing PIN format "hex string" → ❌ error 31
 GPU 4: Testing PIN format "reversed raw" → ❌ error 31
 GPU 5: Testing PIN format "reversed ASCII" → ❌ error 31
@@ -1090,7 +1088,7 @@ bash
 # In 3 seconds, you get:
 
 fix_1_raw_bytes.m
-fix_2_ascii_decimal.m  
+fix_2_ascii_decimal.m
 fix_3_hex_string.m
 fix_4_reversed_raw.m
 fix_5_reversed_ascii.m
@@ -1147,23 +1145,23 @@ Figure out why and fix it."
 8× H200 (Supervisor):
 "Breaking down the problem into 10 approaches:
 
-- Worker 1: Try raw bytes
-- Worker 2: Try ASCII decimal
-- Worker 3: Try hex string
-- Worker 4: Try reversed order
-- Worker 5: Try with delay
-- Worker 6: Try NSString format
-- Worker 7: Try different lengths
-- Worker 8: Check timing issues
-- Worker 9: Analyze error patterns
-- Worker 10: Research similar fixes
+* Worker 1: Try raw bytes
+* Worker 2: Try ASCII decimal
+* Worker 3: Try hex string
+* Worker 4: Try reversed order
+* Worker 5: Try with delay
+* Worker 6: Try NSString format
+* Worker 7: Try different lengths
+* Worker 8: Check timing issues
+* Worker 9: Analyze error patterns
+* Worker 10: Research similar fixes
 
 GO! All workers start NOW."
 
 [3 SECONDS LATER]
 
 Worker 1: "Raw bytes failed with error 31"
-Worker 2: "ASCII decimal failed"  
+Worker 2: "ASCII decimal failed"
 Worker 3: "Hex string failed"
 Worker 4: "Reversed failed"
 Worker 5: "Delay didn't help"
